@@ -25,7 +25,7 @@ export default function Header() {
       //console.log(imgUrl);
       setNavItems(
         Object.values(itemObject).map((item) => {
-          console.log(item);
+          // console.log(item);
           //if Objekt-> Abgleichen Id mit Url else -> normale Ausgabe
           return <li key={uuidv4()}>{item}</li>;
         })
