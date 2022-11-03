@@ -1,0 +1,6 @@
+header {
+}
+
+header .navContainer {
+  background-color: var(--color-primary);
+}
