@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { accessToken, apiBase } from "../../Helper/ApiConstants";
 import Navbar from "./Navbar";
 import { v4 as uuidv4 } from "uuid";
+import "./Header.css";
 
 export default function Header() {
   const [navData, setNavData] = useState();
@@ -20,14 +21,29 @@ export default function Header() {
 
   useEffect(() => {
     if (navData) {
-      const itemObject = navData.items[0].fields;
+      const itemArray = navData.items;
       const imgUrl = navData.includes.Asset[0].fields.file.url;
-      //console.log(imgUrl);
       setNavItems(
-        Object.values(itemObject).map((item) => {
-          // console.log(item);
-          //if Objekt-> Abgleichen Id mit Url else -> normale Ausgabe
-          return <li key={uuidv4()}>{item}</li>;
+        Object.values(itemArray).map((item) => {
+          console.log(item.fields);
+          if (item.fields.icon) {
+            console.log(item.fields.icon.sys.id);
+            return (
+              <li key={uuidv4()} className="logo">
+                <NavLink to={item.fields.icon.link}>
+                  <img src={`https:${imgUrl}`} alt="Logo" />
+                </NavLink>
+              </li>
+            );
+          } else {
+            return (
+              <li key={uuidv4()}>
+                <NavLink key={uuidv4()} to={item.fields.link}>
+                  {item.fields.title}
+                </NavLink>
+              </li>
+            );
+          }
         })
       );
 
@@ -45,8 +61,8 @@ export default function Header() {
 
   return (
     <header>
-      {/* {navItems} */}
-      <Navbar />
+      <Navbar navItems={navItems} />
+      <h1>Ich bin das Headerbild!</h1>
     </header>
   );
 }
