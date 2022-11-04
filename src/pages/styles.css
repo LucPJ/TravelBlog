@@ -7,7 +7,7 @@
 .category-title {
   color: var(--color-primary);
   display: flex;
-  justify-content: center;
+justify-content: center;
 }
 
 .category-text {
