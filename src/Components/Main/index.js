@@ -1,9 +1,11 @@
 import React from "react";
+import MainRoutes from "../Routing/MainRoutes";
+import Landingpage from "./Landingpage/Landingpage";
 
 export default function Main() {
   return (
     <main>
-      <h1>Main!</h1>
+      <MainRoutes />
     </main>
   );
 }

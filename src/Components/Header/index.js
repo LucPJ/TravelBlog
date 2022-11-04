@@ -25,9 +25,9 @@ export default function Header() {
       const imgUrl = navData.includes.Asset[0].fields.file.url;
       setNavItems(
         Object.values(itemArray).map((item) => {
-          console.log(item.fields);
+          // console.log(item.fields);
           if (item.fields.icon) {
-            console.log(item.fields.icon.sys.id);
+            // console.log(item.fields.icon.sys.id);
             return (
               <li key={uuidv4()} className="logo">
                 <NavLink to={item.fields.icon.link}>
@@ -38,7 +38,7 @@ export default function Header() {
           } else {
             return (
               <li key={uuidv4()}>
-                <NavLink key={uuidv4()} to={item.fields.link}>
+                <NavLink key={uuidv4()} to={`country${item.fields.link}`}>
                   {item.fields.title}
                 </NavLink>
               </li>
@@ -62,7 +62,6 @@ export default function Header() {
   return (
     <header>
       <Navbar navItems={navItems} />
-      <h1>Ich bin das Headerbild!</h1>
     </header>
   );
 }
