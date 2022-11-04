@@ -1,11 +1,13 @@
-import Header from "./Components/Header/Header";
-import Article from "./Components/Article/index"
+import Header from "./Components/Header";
+import Main from "./Components/Main";
+import Article from "./Components/Article";
 
 function App() {
   return (
     <>
       <Header />
       <Article />
+      <Main />
     </>
   );
 }

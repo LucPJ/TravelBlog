@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function Navbar() {
+export default function Navbar({ navItems }) {
   return (
-    <>
-      <h1>Ich bin die Navbar!</h1>
-    </>
+    <div className="navContainer">
+      <nav>
+        <ul>{navItems}</ul>
+      </nav>
+    </div>
   );
 }

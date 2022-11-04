@@ -1,17 +1,18 @@
-:root{
+:root {
   --color-primary: #708d81;
   --color-secondary: #bf0603;
   --color-dark: #001427;
   --color-light: #f1f1f1;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Rosario', sans-serif;
+  font-family: "Rosario", sans-serif;
 }
 
-ul{
+ul {
   padding-inline-start: 0;
+  list-style: none;
 }
