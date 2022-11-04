@@ -38,7 +38,7 @@ export default function Header() {
           } else {
             return (
               <li key={uuidv4()}>
-                <NavLink key={uuidv4()} to={item.fields.link}>
+                <NavLink key={uuidv4()} to={`country${item.fields.link}`}>
                   {item.fields.title}
                 </NavLink>
               </li>
