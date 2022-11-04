@@ -1,44 +1,19 @@
-<<<<<<< HEAD
-.category-detail-page {
-  display: flex;
-
-}
-
-=======
->>>>>>> main
 .header-image {
   width: 100%;
   object-fit: cover;
   height: 500px; 
 }
 
-<<<<<<< HEAD
-.category {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-}
-
-.category-title {
-  color: var(--color-primary);
-
-=======
 .category-title {
   color: var(--color-primary);
   display: flex;
 justify-content: center;
->>>>>>> main
 }
 
 .category-text {
   color: var(--color-primary);
-<<<<<<< HEAD
-
-=======
   width: 40%;
   display: flex;
   margin: auto;
->>>>>>> main
 
 }

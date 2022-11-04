@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import CategoryDetailPage from "../pages/CategoryDetailPage";
 import Landingpage from "../Main/Landingpage/Landingpage";
+import Article from "../article/Article";
 
 export default function MainRoutes() {
   return (
@@ -9,8 +10,8 @@ export default function MainRoutes() {
       <Route path="/" element={<Landingpage />} />
       <Route path="country/:slug" element={<CategoryDetailPage />} />
       <Route
-        path="country/:slug/:id"
-        element={"Hier kommen Lucys Seiten rein"}
+        path="article/:slugArticle"
+        element={<Article />}
       />
     </Routes>
   );
