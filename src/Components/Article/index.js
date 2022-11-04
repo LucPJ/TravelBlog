@@ -9,11 +9,24 @@ export default function Article(){
 
     useEffect(() =>{
     setLoading(true);
-    client.getEntries({content_type:"blogCard"})
+    client.getEntries({content_type:"article"})
         .then((response) =>{setArticles(response.items)})
         .catch(console.error)
         setLoading(false)
 },[])
+
+// console.log(articles)
+
+    const listOfArticles = articles.map((article) => {
+        return(
+            <div>
+                <h2>{article.fields.title}</h2>
+
+            </div>
+        )
+
+    }
+    )
 
     return(
 
