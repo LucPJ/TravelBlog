@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import CategoryBlogCard from '../Components/CategoryBlogCard';
+import CategoryBlogCard from '../Components/blogcards/CategoryBlogCard';
 import { client } from '../Helper/ApiConstants';
 import './styles.css';
 
@@ -36,7 +36,7 @@ export default function CategoryDetailPage() {
               src={pageData.items[0].fields.headerImage.fields.file.url} 
               alt={pageData.items[0].fields.headerImage.fields.description} 
             />
-            <div>
+            <div className='category'>
               <h1 className='category-title'>{pageData.items[0].fields.categoryText.fields.categoryTitle}</h1>
               <p className='category-text'>{pageData.items[0].fields.categoryText.fields.categoryText}</p>
             </div>
