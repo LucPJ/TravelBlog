@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import CategoryBlogCard from "../Main/CategoryBlogCard";
+import CategoryBlogCard from "../blogcards/CategoryBlogCard";
 import { client } from "../../Helper/ApiConstants";
 import "./styles.css";
 
@@ -24,12 +24,17 @@ export default function CategoryDetailPage() {
   }, [slug]);
 
   const blogCards = pageData
-    ? pageData.items[0].fields.blogCards.map((blogCard) => (
-        <CategoryBlogCard
-          blogCardData={blogCard.fields}
-          key={blogCard.sys.id}
-        />
-      ))
+    ? pageData.items[0].fields.blogCards.map(
+        (blogCard) => (
+          console.log("map", blogCard),
+          (
+            <CategoryBlogCard
+              blogCardData={blogCard.fields}
+              key={blogCard.sys.id}
+            />
+          )
+        )
+      )
     : "";
 
   return (

@@ -9,10 +9,7 @@ export default function MainRoutes() {
     <Routes>
       <Route path="/" element={<Landingpage />} />
       <Route path="country/:slug" element={<CategoryDetailPage />} />
-      <Route
-        path="article/:slugArticle"
-        element={<Article />}
-      />
+      <Route path="country/:slug/article/:slugArticle" element={<Article />} />
     </Routes>
   );
 }
