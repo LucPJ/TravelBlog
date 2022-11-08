@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function CategoryBlogCard({ blogCardData }) {
   console.log("Card", blogCardData);
@@ -11,7 +12,11 @@ export default function CategoryBlogCard({ blogCardData }) {
       />
       {blogCardData.cardTitle}
       {blogCardData.cardText}
-      {blogCardData.cardLink}
+
+      <Link to={`article/${blogCardData.slugArticle}`}>
+        <button>{blogCardData.cardLink}</button>
+      </Link>
+
       {blogCardData.cardShareLink}
     </div>
   );
