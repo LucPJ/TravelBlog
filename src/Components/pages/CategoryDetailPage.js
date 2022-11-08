@@ -24,17 +24,12 @@ export default function CategoryDetailPage() {
   }, [slug]);
 
   const blogCards = pageData
-    ? pageData.items[0].fields.blogCards.map(
-        (blogCard) => (
-          console.log("map", blogCard),
-          (
-            <CategoryBlogCard
-              blogCardData={blogCard.fields}
-              key={blogCard.sys.id}
-            />
-          )
-        )
-      )
+    ? pageData.items[0].fields.blogCards.map((blogCard) => (
+        <CategoryBlogCard
+          blogCardData={blogCard.fields}
+          key={blogCard.sys.id}
+        />
+      ))
     : "";
 
   return (
