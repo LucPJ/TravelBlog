@@ -22,8 +22,6 @@ export default function Article() {
       .catch((err) => console.log(err));
   }, [slugArticle]);
 
-  console.log(articles);
-
   return (
     <div>
       {isLoading ? (
