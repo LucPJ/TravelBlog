@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import CategoryBlogCard from "../Main/CategoryBlogCard";
+import CategoryBlogCard from "../blogcards/CategoryBlogCard";
 import { client } from "../../Helper/ApiConstants";
 import "./styles.css";
 
@@ -52,7 +52,9 @@ export default function CategoryDetailPage() {
             </p>
           </div>
 
-          <div>{blogCards}</div>
+          <div className="blogcards-container">
+            {blogCards}
+          </div>
         </div>
       )}
     </div>
