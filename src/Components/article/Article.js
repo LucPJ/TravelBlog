@@ -5,6 +5,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Sidebar from "./sidebar/Sidebar"
 import './styles.css';
 
+
 export default function Article() {
   const { slugArticle } = useParams();
 
@@ -18,7 +19,6 @@ export default function Article() {
         "fields.slugArticle[match]": slugArticle,
       })
       .then((response) => {
-        console.log(response);
         setArticles(response);
         setIsLoading(false);
       })
@@ -70,6 +70,7 @@ export default function Article() {
               </div>
             </div>
            </div> 
+
           </div>
       )}
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import CategoryDetailPage from "../pages/CategoryDetailPage";
 import Landingpage from "../Main/Landingpage/Landingpage";
-import Article from "../article/Article";
+import Article from "../Article/Article";
 
 export default function MainRoutes() {
   return (
