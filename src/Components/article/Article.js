@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { client } from "./Client";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export default function Article() {
   const { slugArticle } = useParams();
@@ -15,9 +16,9 @@ export default function Article() {
         "fields.slugArticle[match]": slugArticle,
       })
       .then((response) => {
+        console.log(response);
         setArticles(response);
         setIsLoading(false);
-        console.log(articles);
       })
       .catch((err) => console.log(err));
   }, [slugArticle]);
@@ -39,7 +40,7 @@ export default function Article() {
               {articles.items[0].fields.description.content[0].content[0].value}
             </p>
             <p>
-              {articles.items[0].fields.articleText.content[0].content[0].value}
+            {documentToReactComponents(articles.items[0].fields.articleText)}
             </p>
           </div>
           <div className="author-container">
