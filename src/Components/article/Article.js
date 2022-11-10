@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { client } from "./Client";
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { client } from "./client";
+import "./article.css";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 export default function Article() {
   const { slugArticle } = useParams();
@@ -34,13 +35,14 @@ export default function Article() {
             src={articles.items[0].fields.headerbild.fields.file.url}
             alt={articles.items[0].fields.headerbild.fields.description}
           />
+
           <div className="article-blog">
             <h1>{articles.items[0].fields.title}</h1>
             <p>
               {articles.items[0].fields.description.content[0].content[0].value}
             </p>
             <p>
-            {documentToReactComponents(articles.items[0].fields.articleText)}
+              {documentToReactComponents(articles.items[0].fields.articleText)}
             </p>
           </div>
           <div className="author-container">
