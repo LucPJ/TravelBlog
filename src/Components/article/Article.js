@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { client } from "./Client";
+import "./article.css";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export default function Article() {
@@ -29,11 +30,13 @@ export default function Article() {
         <div>is loading</div>
       ) : (
         <div className="article">
+          
           <img
             className="header-image"
             src={articles.items[0].fields.headerbild.fields.file.url}
             alt={articles.items[0].fields.headerbild.fields.description}
           />
+         
           <div className="article-blog">
             <h1>{articles.items[0].fields.title}</h1>
             <p>
@@ -49,15 +52,15 @@ export default function Article() {
               src={
                 articles.items[0].fields.author.fields.authorAvatar.fields.file
                   .url
-              }
-              alt={
-                articles.items[0].fields.author.fields.authorAvatar.fields
-                  .description
-              }
-            />
-            <p>{articles.items[0].fields.author.fields.name}</p>
+                }
+                alt={
+                  articles.items[0].fields.author.fields.authorAvatar.fields
+                    .description
+                }
+              />
+              <p>{articles.items[0].fields.author.fields.name}</p>
+            </div>
           </div>
-        </div>
       )}
     </div>
   );
