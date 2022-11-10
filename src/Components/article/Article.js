@@ -57,7 +57,14 @@ export default function Article() {
                   articles.items[0].fields.articleText
                 )}
               </div>
-
+              {articles.items[0].fields.location ? (
+                <Map
+                  title={articles.items[0].fields.title}
+                  location={articles.items[0].fields.location}
+                />
+              ) : (
+                ""
+              )}
               <div className="author-container">
                 <img
                   className="author-image"
@@ -74,14 +81,6 @@ export default function Article() {
                   Artikel von {articles.items[0].fields.author.fields.name}
                 </p>
               </div>
-              {articles.items[0].fields.location ? (
-                <Map
-                  title={articles.items[0].fields.title}
-                  location={articles.items[0].fields.location}
-                />
-              ) : (
-                ""
-              )}
             </div>
           </div>
         </div>
