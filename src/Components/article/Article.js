@@ -17,7 +17,6 @@ export default function Article() {
         "fields.slugArticle[match]": slugArticle,
       })
       .then((response) => {
-        console.log(response);
         setArticles(response);
         setIsLoading(false);
       })
@@ -41,9 +40,7 @@ export default function Article() {
             <p>
               {articles.items[0].fields.description.content[0].content[0].value}
             </p>
-            <p>
-              {documentToReactComponents(articles.items[0].fields.articleText)}
-            </p>
+            {documentToReactComponents(articles.items[0].fields.articleText)}
           </div>
           <div className="author-container">
             <img
