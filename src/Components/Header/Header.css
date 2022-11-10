@@ -101,7 +101,7 @@ header .burger .stripes {
   header ul {
     display: flex;
     justify-content: space-around;
-    max-width: 800px;
+    max-width: 1200px;
     margin: auto;
   }
   header > .navContainer > nav li {

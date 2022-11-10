@@ -3,18 +3,15 @@ import IconNavitem from "./IconNavItem";
 import CommentIcon from "./CommentIcon";
 import FacebookIcon from "./FacebookIcon";
 import LikeIcon from "./LikeIcon";
-import '../../blogcards/blogcards.css'
+import "../../blogcards/blogcards.css";
 
-
-export default function IconNavbar({blogCardData}) {
-
-  console.log (blogCardData)
+export default function IconNavbar({ blogCardData }) {
   return (
     <nav className="icon-navigation">
       <div>
         <ul className="icon-navlist">
           <IconNavitem>
-          <FacebookIcon blogCardData={blogCardData} />
+            <FacebookIcon blogCardData={blogCardData} />
           </IconNavitem>
           <IconNavitem>
             <LikeIcon />

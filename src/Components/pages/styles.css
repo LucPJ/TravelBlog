@@ -4,7 +4,7 @@
   height: 500px;
 }
 
-img.header-image  {
+img.header-image {
   max-width: 100%;
 }
 
@@ -23,18 +23,16 @@ img.header-image  {
 }
 
 .blogcards-container {
-  width: 70%;
+  max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: auto;
   gap: 50px;
-} 
+  justify-items: center;
+}
 
 @media screen and (min-width: 600px) {
   .category-text {
     width: 80%;
-  }
-  header .logo img {
-    width: 180px;
   }
 }

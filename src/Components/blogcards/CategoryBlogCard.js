@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../blogcards/blogcards.css";
 import IconNavbar from "./blogcard-navigation/IconNavbar";
 
-
 export default function CategoryBlogCard({ blogCardData }) {
   return (
     <div className="category-blog-card">
@@ -19,12 +18,14 @@ export default function CategoryBlogCard({ blogCardData }) {
           <p>{blogCardData.cardText}</p>
           <div className="link-container">
             <Link to={`article/${blogCardData.slugArticle}`}>
-              <button className="category-blog-card-link">{blogCardData.cardLink}</button>
+              <button className="category-blog-card-link">
+                {blogCardData.cardLink}
+              </button>
             </Link>
-            <IconNavbar blogCardData={blogCardData.cardShareLink}/>
+            <IconNavbar blogCardData={blogCardData.cardShareLink} />
           </div>
         </div>
-      </div>   
+      </div>
     </div>
   );
 }
