@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { client } from "./Client";
 import "./article.css";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export default function Article() {
   const { slugArticle } = useParams();
@@ -16,9 +17,9 @@ export default function Article() {
         "fields.slugArticle[match]": slugArticle,
       })
       .then((response) => {
+        console.log(response);
         setArticles(response);
         setIsLoading(false);
-        console.log(articles);
       })
       .catch((err) => console.log(err));
   }, [slugArticle]);
@@ -37,20 +38,19 @@ export default function Article() {
           />
          
           <div className="article-blog">
-            <div className="article-text">
-              <h1>{articles.items[0].fields.title}</h1>
-              <p>
-                {articles.items[0].fields.description.content[0].content[0].value}
-              </p>
-              <p>
-                {articles.items[0].fields.articleText.content[0].content[0].value}
-              </p>
-            </div>
-            <div className="author-container">
-              <img
-                className="author-image"
-                src={
-                  articles.items[0].fields.author.fields.authorAvatar.fields.file
+            <h1>{articles.items[0].fields.title}</h1>
+            <p>
+              {articles.items[0].fields.description.content[0].content[0].value}
+            </p>
+            <p>
+            {documentToReactComponents(articles.items[0].fields.articleText)}
+            </p>
+          </div>
+          <div className="author-container">
+            <img
+              className="author-image"
+              src={
+                articles.items[0].fields.author.fields.authorAvatar.fields.file
                   .url
                 }
                 alt={
@@ -61,7 +61,6 @@ export default function Article() {
               <p>{articles.items[0].fields.author.fields.name}</p>
             </div>
           </div>
-        </div>
       )}
     </div>
   );

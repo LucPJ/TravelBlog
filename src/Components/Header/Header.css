@@ -1,6 +1,135 @@
-header {
+header a {
+  color: var(--color-light);
 }
 
 header .navContainer {
   background-color: var(--color-primary);
+  height: 100px;
+}
+
+header nav {
+  height: 100%;
+  position: relative;
+}
+
+header .logo {
+  position: absolute;
+  background-color: var(--color-primary);
+  border-radius: 100vw;
+  padding: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -23%;
+}
+
+header .logo img {
+  width: 150px;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+header li:not(.logo) {
+  position: absolute;
+  right: -200px;
+  bottom: -20px;
+  background-color: var(--color-primary);
+  height: 25px;
+  width: 110px;
+  transition: right 0.3s ease-in-out;
+}
+
+header li:not(.logo) a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding-left: 25px;
+}
+
+header li:not(.logo):nth-of-type(2) {
+  bottom: -45px;
+}
+header li:not(.logo):nth-of-type(3) {
+  bottom: -70px;
+}
+header li:not(.logo):nth-of-type(4) {
+  bottom: -95px;
+  border-bottom-left-radius: 25px;
+}
+header ul.show li:not(.logo) {
+  right: 0;
+}
+
+header .burger {
+  border: none;
+  background-color: unset;
+  width: 22px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30px;
+}
+header .burger .stripes {
+  box-sizing: border-box;
+  height: 20px;
+  border-block: 2px solid var(--color-light);
+  position: relative;
+}
+.burger .stripes::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-light);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (min-width: 400px) {
+  header .logo {
+    top: -35%;
+  }
+  header .logo img {
+    width: 180px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  header .burger {
+    display: none;
+  }
+  header ul {
+    display: flex;
+    justify-content: space-around;
+    max-width: 800px;
+    margin: auto;
+  }
+  header > .navContainer > nav li {
+    position: static;
+    height: min-content;
+    width: auto;
+    transform: none;
+  }
+  header .logo {
+    order: 3;
+    margin-top: -30px;
+  }
+  header li:not(.logo) a {
+    padding: 0;
+  }
+  header li:not(.logo) {
+    padding-top: 40px;
+  }
+  header li:not(.logo):nth-of-type(1) {
+    order: 1;
+  }
+  header li:not(.logo):nth-of-type(2) {
+    order: 2;
+  }
+  header li:not(.logo):nth-of-type(3) {
+    order: 4;
+  }
+  header li:not(.logo):nth-of-type(4) {
+    order: 5;
+  }
 }

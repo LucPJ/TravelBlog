@@ -52,7 +52,9 @@ export default function CategoryDetailPage() {
             </p>
           </div>
 
-          <div>{blogCards}</div>
+          <div className="blogcards-container">
+            {blogCards}
+          </div>
         </div>
       )}
     </div>
