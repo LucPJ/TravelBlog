@@ -1,47 +1,26 @@
 import React, {useState, useEffect} from "react";
 import { client } from "../../Helper/ApiConstants";
-import { v4 as uuidv4 } from "uuid";
-
 
 export default function Footer() {
-    const [navData, setNavData] = useState();
     const [footerNavItem, setFooterNavItem] = useState();
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
     client
         .getEntries({content_type: "footerNavItem"})
-        .then((response) => setNavData(response.items))
+        .then((response) => {
+            setFooterNavItem(response)
+            setIsLoading(false);
+        })
         .catch((err) => console.log(err));
     }, []);
 
     console.log(footerNavItem)
-  
-    useEffect(() => {
-        if (navData) {
-          setFooterNavItem(
-            navData.map((item) => {
-              if (item.fields.icon) {
-                return (
-                  <li key={uuidv4()} className="logo">
-                      <img
-                        src={item.fields.footerLogo.fields.file.url}
-                        alt="Logo"
-                      />
-                  </li>
-                );
-              } 
-            })
-          );
-    
-          setIsLoading(false);
-        }
-      }, [navData]);
 
-    if(isLoading) {
+    if(isLoading){
         return <div>is loading...</div>
-    }    
-
+    }
+     
 /*     const footerItems = footerNavItem.map((item) => {
         return(
             <div>
@@ -50,6 +29,8 @@ export default function Footer() {
         )
     })
  */
+ 
+
 
     return (
         <div>
