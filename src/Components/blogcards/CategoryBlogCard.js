@@ -20,7 +20,7 @@ export default function CategoryBlogCard({ blogCardData }) {
             <Link to={`article/${blogCardData.slugArticle}`}>
               <button className="category-blog-card-link">{blogCardData.cardLink}</button>
             </Link>
-            <IconNavbar />
+            <IconNavbar blogCardData={blogCardData.cardShareLink}/>
           </div>
         </div>
       </div>   

@@ -13,16 +13,13 @@ img.header-image  {
   display: flex;
   justify-content: center;
   margin-top: 40px;
-
 }
-
 
 .category-text {
   color: var(--color-primary);
-  width: 40%;
+  width: 50%;
   display: flex;
   margin: 20px auto 80px auto;
-
 }
 
 .blogcards-container {
@@ -32,3 +29,12 @@ img.header-image  {
   margin: auto;
   gap: 50px;
 } 
+
+@media screen and (min-width: 600px) {
+  .category-text {
+    width: 80%;
+  }
+  header .logo img {
+    width: 180px;
+  }
+}
