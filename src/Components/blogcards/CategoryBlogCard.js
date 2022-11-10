@@ -22,7 +22,7 @@ export default function CategoryBlogCard({ blogCardData }) {
                 {blogCardData.cardLink}
               </button>
             </Link>
-            <IconNavbar blogCardData={blogCardData} />
+            <IconNavbar blogCardData={blogCardData.cardShareLink} />
           </div>
         </div>
       </div>
