@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { client } from "./Client";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Sidebar from "./sidebar/Sidebar"
+import Sidebar from "./sidebar/Sidebar";
 import './styles.css';
 
 
@@ -68,6 +68,7 @@ export default function Article() {
                 />
                 <p className="author-name">Artikel von {articles.items[0].fields.author.fields.name}</p> 
               </div>
+         
             </div>
            </div> 
 
