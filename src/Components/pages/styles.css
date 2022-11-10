@@ -4,7 +4,7 @@
   height: 500px;
 }
 
-img.header-image  {
+img.header-image {
   max-width: 100%;
 }
 
@@ -13,22 +13,20 @@ img.header-image  {
   display: flex;
   justify-content: center;
   margin-top: 40px;
-
 }
-
 
 .category-text {
   color: var(--color-primary);
   width: 40%;
   display: flex;
   margin: 20px auto 80px auto;
-
 }
 
 .blogcards-container {
-  width: 70%;
+  max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: auto;
   gap: 50px;
-} 
+  justify-items: center;
+}

@@ -18,12 +18,14 @@ export default function CategoryBlogCard({ blogCardData }) {
           <p>{blogCardData.cardText}</p>
           <div className="link-container">
             <Link to={`article/${blogCardData.slugArticle}`}>
-              <button className="category-blog-card-link">{blogCardData.cardLink}</button>
+              <button className="category-blog-card-link">
+                {blogCardData.cardLink}
+              </button>
             </Link>
-            <IconNavbar />
+            <IconNavbar blogCardData={blogCardData} />
           </div>
         </div>
-      </div>   
+      </div>
     </div>
   );
 }
