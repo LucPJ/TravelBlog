@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../blogcards/blogcards.css";
 import IconNavbar from "./blogcard-navigation/IconNavbar";
 
+
 export default function CategoryBlogCard({ blogCardData }) {
   return (
     <div className="category-blog-card">
