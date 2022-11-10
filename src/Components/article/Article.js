@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { client } from "./client";
 import "./article.css";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Map from "./Map";
 
 export default function Article() {
   const { slugArticle } = useParams();
@@ -56,6 +57,14 @@ export default function Article() {
             />
             <p>{articles.items[0].fields.author.fields.name}</p>
           </div>
+          {articles.items[0].fields.location ? (
+            <Map
+              title={articles.items[0].fields.title}
+              location={articles.items[0].fields.location}
+            />
+          ) : (
+            ""
+          )}
         </div>
       )}
     </div>
