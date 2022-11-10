@@ -23,18 +23,22 @@ img.header-image  {
 }
 
 .blogcards-container {
-  width: 70%;
+  max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
   margin: auto;
-  gap: 50px;
+  gap: 40px;
 } 
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 1000px) {
   .category-text {
     width: 80%;
   }
-  header .logo img {
-    width: 180px;
+ }
+
+ @media screen and (max-width: 1100px) {
+  .blogcards-container {
+    grid-template-columns: 1fr;
   }
-}
+ }
