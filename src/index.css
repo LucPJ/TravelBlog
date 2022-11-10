@@ -16,3 +16,10 @@ ul {
   padding-inline-start: 0;
   list-style: none;
 }
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 500px;
+}
