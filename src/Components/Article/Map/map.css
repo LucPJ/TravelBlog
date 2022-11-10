@@ -1,4 +1,7 @@
 .leaflet-container {
   height: 300px;
-  width: 50%;
+  width: 70%;
+  margin-block: 20px;
+}
+.address-container {
 }
