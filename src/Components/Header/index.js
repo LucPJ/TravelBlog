@@ -20,6 +20,7 @@ export default function Header() {
 
   useEffect(() => {
     if (navData) {
+      console.log(navData);
       setNavItems(
         navData.map((item) => {
           if (item.fields.icon) {
@@ -48,7 +49,7 @@ export default function Header() {
       setIsLoading(false);
     }
   }, [navData]);
-
+  // console.log("header", navData);
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
