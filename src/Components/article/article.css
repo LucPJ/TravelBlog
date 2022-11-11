@@ -1,35 +1,35 @@
-*{
+* {
   color: var(--color-primary);
 }
 
 .article-blog {
-    height: inherit;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    text-align: justify; 
+  height: inherit;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
 }
 
 .header-image {
-    width: 8000px;
+  width: 8000px;
 }
 
 .author-image {
-    height: 70px;
+  height: 70px;
 }
 
 .author-container {
-    justify-content: flex-start;
-    display: flex;
-    align-items: flex-end;
-    margin-left: 4rem;
+  justify-content: flex-start;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 4rem;
 }
 
 .article-text {
-    margin: 2rem;
-    padding: 2em;
+  margin: 2rem;
+  padding: 2em;
 }
 
-h1.article-text{
-    text-align: center;
+h1.article-text {
+  text-align: center;
 }
