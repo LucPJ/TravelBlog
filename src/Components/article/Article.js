@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { client } from "./Client";
+import { client } from "./client";
 import "./article.css";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Map from "./Map";
