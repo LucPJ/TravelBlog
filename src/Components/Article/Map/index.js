@@ -6,7 +6,7 @@ export default function Map({ title, location }) {
   return (
     <div className="map-section">
       <div className="address-container">
-        <h2>Karte der Location</h2>
+        <h2 >Karte der Location</h2>
       </div>
       <MapContainer center={location} zoom={10} scrollWheelZoom={true}>
         <TileLayer

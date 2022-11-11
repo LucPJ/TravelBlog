@@ -6,6 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Map from "./Map";
 import Sidebar from "./sidebar/Sidebar";
 import "./styles.css";
+import IconNavbar from "../blogcards/blogcard-navigation/IconNavbar";
 
 export default function Article() {
   const { slugArticle } = useParams();
@@ -53,7 +54,6 @@ export default function Article() {
                       .value
                   }
                 </p>
-                <p></p>
                 {documentToReactComponents(
                   articles.items[0].fields.articleText
                 )}
@@ -66,21 +66,26 @@ export default function Article() {
               ) : (
                 ""
               )}
-              <div className="author-container">
-                <img
-                  className="author-image"
-                  src={
-                    articles.items[0].fields.author.fields.authorAvatar.fields
-                      .file.url
-                  }
-                  alt={
-                    articles.items[0].fields.author.fields.authorAvatar.fields
-                      .description
-                  }
-                />
-                <p className="author-name">
-                  Artikel von {articles.items[0].fields.author.fields.name}
-                </p>
+              <div className="author-nav">
+                <div className="author-container">
+                  <img
+                    className="author-image"
+                    src={
+                      articles.items[0].fields.author.fields.authorAvatar.fields
+                        .file.url
+                    }
+                    alt={
+                      articles.items[0].fields.author.fields.authorAvatar.fields
+                        .description
+                    }
+                  />
+                  <p className="author-name">
+                    Artikel von {articles.items[0].fields.author.fields.name}
+                  </p>
+                </div>
+                <div className="icon-navbar">
+                  <IconNavbar />
+                </div>
               </div>
             </div>
           </div>
