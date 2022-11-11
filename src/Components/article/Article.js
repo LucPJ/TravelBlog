@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { client } from "./client";
 import "./article.css";
@@ -84,12 +84,12 @@ export default function Article() {
                   </p>
                 </div>
                 <div className="icon-navbar">
-                  <IconNavbar />
+                  <IconNavbar/>
                 </div>
               </div>
-            </div>
+             </div>
           </div>
-        </div>
+      </div>
       )}
     </div>
   );

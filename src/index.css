@@ -12,6 +12,10 @@
   font-family: "Rosario", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ul {
   padding-inline-start: 0;
   list-style: none;
