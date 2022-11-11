@@ -1,0 +1,7 @@
+#backToTop {
+    width: 70px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: var(--color-primary);
+  }
