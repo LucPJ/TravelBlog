@@ -3,6 +3,7 @@ import { client } from "../../Helper/ApiConstants";
 import './footer.css';
 import BackToTopButton from "../assets/BackToTopButton";
 
+
 export default function Footer() {
   const [footerNavData, setFooterNavData] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -22,19 +23,18 @@ export default function Footer() {
     if (footerNavData) {
       setFooterNavItem(
         footerNavData.map((item) => {
-          console.log(item)
           if (item.fields.footerLogo) {
-            return(
+            return (
               <li>
-                <img className="logo" src={item.fields.footerLogo.fields.file.url} alt="Logo"/>
+                <img
+                  className="logo"
+                  src={item.fields.footerLogo.fields.file.url}
+                  alt="Logo"
+                />
               </li>
             );
           } else {
-            return(
-              <li >
-                {item.fields.footerNavItemText}
-              </li>
-            )
+            return <li>{item.fields.footerNavItemText}</li>;
           }
         })
       );
@@ -46,14 +46,12 @@ export default function Footer() {
     return <div>is loading...</div>;
   }
   return (
-    // <footer className="footer">
-      <div className="footer">
+    <div className="footer">
         <BackToTopButton />
         <ul className="footerNav">
         {footerNavItem}
         </ul>
       </div>
     // </footer>
-
   );
 }

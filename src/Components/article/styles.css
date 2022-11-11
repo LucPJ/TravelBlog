@@ -7,10 +7,11 @@
 }
 
 .sidebar {
-  background-color: hsla(155, 11%, 50%, 0.4);  
+  background-color: hsla(155, 11%, 50%, 0.4);
   width: 20%;
-  height: 400px;
-  border-radius: 5%;
+  height: min-content;
+  border-radius: 5px;
+  padding: 20px;
 }
 
 .article-container {
@@ -61,23 +62,27 @@ h1 {
   .sidebar-and-article {
     width: 90%;
   }
+  .article-container {
+    width: 80%;
+  }
   .sidebar {
     width: 15%;
   }
 }
 
- @media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px) {
   .sidebar-and-article {
     width: 100%;
   }
-  .article-blog, .leaflet-container {
+  .article-blog,
+  .leaflet-container {
     width: 80%;
     display: flex;
     margin: auto;
- }
+  }
   .article-container {
     width: 100%;
- }
+  }
   .sidebar {
     display: none;
   }
@@ -85,4 +90,4 @@ h1 {
     width: 80%;
     margin: auto;
   }
- }
+}

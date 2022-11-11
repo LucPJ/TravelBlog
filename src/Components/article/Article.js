@@ -1,15 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { client } from "./Client";
+import { client } from "./client";
 import "./article.css";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Map from "./Map";
 import Sidebar from "./sidebar/Sidebar";
 import "./styles.css";
 import IconNavbar from "../blogcards/blogcard-navigation/IconNavbar";
-
-
-
 
 export default function Article() {
   const { slugArticle } = useParams();
@@ -25,6 +22,7 @@ export default function Article() {
       })
       .then((response) => {
         setArticles(response);
+        console.log(response);
         setIsLoading(false);
       })
       .catch((err) => console.log(err));
@@ -84,7 +82,7 @@ export default function Article() {
                   <p className="author-name">
                     Artikel von {articles.items[0].fields.author.fields.name}
                   </p>
-                </div>  
+                </div>
                 <div className="icon-navbar">
                   <IconNavbar/>
                 </div>
