@@ -21,6 +21,7 @@ export default function Article() {
       })
       .then((response) => {
         setArticles(response);
+        console.log(response);
         setIsLoading(false);
       })
       .catch((err) => console.log(err));

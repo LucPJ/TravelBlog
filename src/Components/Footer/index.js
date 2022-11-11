@@ -18,11 +18,7 @@ export default function Footer() {
 
   useEffect(() => {
     if (footerNavData) {
-      setFooterNavItem(
-        footerNavData.map((item) => {
-          console.log(item);
-        })
-      );
+      setFooterNavItem(footerNavData.map((item) => {}));
 
       setIsLoading(false);
     }
