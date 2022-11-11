@@ -46,12 +46,12 @@ export default function Footer() {
     return <div>is loading...</div>;
   }
   return (
-    <div className="footer">
-        <BackToTopButton />
-        <ul className="footerNav">
+    <footer className="footer">
+      <BackToTopButton />
+      <ul className="footerNav">
         {footerNavItem}
-        </ul>
-      </div>
-    // </footer>
+      </ul>
+    </footer>
+
   );
 }
