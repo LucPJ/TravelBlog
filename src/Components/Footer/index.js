@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { client } from "../../Helper/ApiConstants";
-import './footer.css'
+import "./footer.css";
 
 export default function Footer() {
   const [footerNavData, setFooterNavData] = useState();
@@ -21,19 +21,18 @@ export default function Footer() {
     if (footerNavData) {
       setFooterNavItem(
         footerNavData.map((item) => {
-          console.log(item)
           if (item.fields.footerLogo) {
-            return(
+            return (
               <li>
-                <img className="logo" src={item.fields.footerLogo.fields.file.url} alt="Logo"/>
+                <img
+                  className="logo"
+                  src={item.fields.footerLogo.fields.file.url}
+                  alt="Logo"
+                />
               </li>
             );
           } else {
-            return(
-              <li >
-                {item.fields.footerNavItemText}
-              </li>
-            )
+            return <li>{item.fields.footerNavItemText}</li>;
           }
         })
       );
@@ -46,12 +45,9 @@ export default function Footer() {
   }
   return (
     // <footer className="footer">
-      <div className="footer">
-        <ul className="footerNav">
-        {footerNavItem}
-        </ul>
-      </div>
+    <div className="footer">
+      <ul className="footerNav">{footerNavItem}</ul>
+    </div>
     // </footer>
-
   );
 }

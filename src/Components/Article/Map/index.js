@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "./map.css";
 
 export default function Map({ title, location }) {
-  console.log(location);
   return (
     <div className="map-section">
       <div className="address-container">
