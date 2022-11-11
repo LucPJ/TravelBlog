@@ -1,9 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { client } from "./Client";
+<<<<<<< HEAD
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Sidebar from "./sidebar/Sidebar";
 import './styles.css';
+=======
+import "./article.css";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Map from "./Map";
+import Sidebar from "./sidebar/Sidebar";
+import "./styles.css";
+import IconNavbar from "../blogcards/blogcard-navigation/IconNavbar";
+>>>>>>> main
 
 
 export default function Article() {
@@ -38,41 +47,56 @@ export default function Article() {
           />
 
           <div className="sidebar-and-article">
-
             <div className="sidebar">
               <Sidebar />
             </div>
-           
-            <div className="article-container">
 
+            <div className="article-container">
               <div className="article-blog">
                 <h1>{articles.items[0].fields.title}</h1>
                 <p className="bold-text">
-                  {articles.items[0].fields.description.content[0].content[0].value}
+                  {
+                    articles.items[0].fields.description.content[0].content[0]
+                      .value
+                  }
                 </p>
-                <p></p>
-                {documentToReactComponents(articles.items[0].fields.articleText)}
+                {documentToReactComponents(
+                  articles.items[0].fields.articleText
+                )}
               </div>
-
-              <div className="author-container">
-                <img
-                  className="author-image"
-                  src={
-                    articles.items[0].fields.author.fields.authorAvatar.fields.file
-                      .url
-                  }
-                  alt={
-                    articles.items[0].fields.author.fields.authorAvatar.fields
-                      .description
-                  }
+              {articles.items[0].fields.location ? (
+                <Map
+                  title={articles.items[0].fields.title}
+                  location={articles.items[0].fields.location}
                 />
-                <p className="author-name">Artikel von {articles.items[0].fields.author.fields.name}</p> 
+              ) : (
+                ""
+              )}
+              <div className="author-nav">
+                <div className="author-container">
+                  <img
+                    className="author-image"
+                    src={
+                      articles.items[0].fields.author.fields.authorAvatar.fields
+                        .file.url
+                    }
+                    alt={
+                      articles.items[0].fields.author.fields.authorAvatar.fields
+                        .description
+                    }
+                  />
+                  <p className="author-name">
+                    Artikel von {articles.items[0].fields.author.fields.name}
+                  </p>
+                </div>  
+                <div className="icon-navbar">
+                  <IconNavbar />
+                </div>
               </div>
          
             </div>
-           </div> 
-
           </div>
+        </div>
       )}
     </div>
   );
