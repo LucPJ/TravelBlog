@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { client } from "../../Helper/ApiConstants";
-import './footer.css'
+import './footer.css';
+import BackToTopButton from "../assets/BackToTopButton";
 
 export default function Footer() {
   const [footerNavData, setFooterNavData] = useState();
@@ -47,6 +48,7 @@ export default function Footer() {
   return (
     // <footer className="footer">
       <div className="footer">
+        <BackToTopButton />
         <ul className="footerNav">
         {footerNavItem}
         </ul>

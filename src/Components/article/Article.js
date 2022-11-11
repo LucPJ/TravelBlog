@@ -1,18 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { client } from "./Client";
-<<<<<<< HEAD
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Sidebar from "./sidebar/Sidebar";
-import './styles.css';
-=======
 import "./article.css";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Map from "./Map";
 import Sidebar from "./sidebar/Sidebar";
 import "./styles.css";
 import IconNavbar from "../blogcards/blogcard-navigation/IconNavbar";
->>>>>>> main
+
+
 
 
 export default function Article() {
@@ -90,13 +86,12 @@ export default function Article() {
                   </p>
                 </div>  
                 <div className="icon-navbar">
-                  <IconNavbar />
+                  <IconNavbar/>
                 </div>
               </div>
-         
-            </div>
+             </div>
           </div>
-        </div>
+      </div>
       )}
     </div>
   );
