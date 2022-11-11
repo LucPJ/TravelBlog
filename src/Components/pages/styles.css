@@ -12,7 +12,6 @@ img.header-image {
   color: var(--color-primary);
   display: flex;
   justify-content: center;
-  margin-top: 40px;
 }
 
 .category-text {

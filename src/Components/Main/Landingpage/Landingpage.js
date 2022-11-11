@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { client } from "../../../Helper/ApiConstants";
 import { v4 as uuidv4 } from "uuid";
 import IconNavbar from "../../blogcards/blogcard-navigation/IconNavbar";
+import '../../../index.css';
 
 export default function Landingpage() {
   const [stageImgData, setStageImgData] = useState();
