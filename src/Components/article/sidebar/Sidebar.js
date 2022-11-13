@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { client } from "../client";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import '../article.css';
 
 export default function Sidebar() {
   const [sideNavData, setSideNavData] = useState();
