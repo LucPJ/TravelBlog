@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { client } from "../../Helper/ApiConstants";
-import "./footer.css";
+import './footer.css';
+import BackToTopButton from '../BackToTopButton'
+
 
 export default function Footer() {
   const [footerNavData, setFooterNavData] = useState();
@@ -44,10 +46,12 @@ export default function Footer() {
     return <div>is loading...</div>;
   }
   return (
-    // <footer className="footer">
-    <div className="footer">
-      <ul className="footerNav">{footerNavItem}</ul>
-    </div>
-    // </footer>
+    <footer className="footer">
+      <BackToTopButton />
+      <ul className="footerNav">
+        {footerNavItem}
+      </ul>
+    </footer>
+
   );
 }
